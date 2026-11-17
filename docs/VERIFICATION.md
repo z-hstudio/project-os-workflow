@@ -44,8 +44,8 @@ enabling query-only access resolved it in one targeted fix. No review loop follo
   Claude Code `2.1.185`; version checks are not canaries.
 - Token improvement or cost savings: **NOT MEASURED**. The comparator's unit tests
   use synthetic numbers, not product performance data.
-- Python 3.11 and Linux: awaiting the new public CI run. Windows is unsupported
-  by the installer.
+- Windows is unsupported by the installer. Linux coverage is limited to the
+  Ubuntu 24.04 offline CI matrix below; real Agent behavior remains untested.
 - The host's generic Skill validator previously lacked PyYAML. The package now
   includes its own tested standard-library checker for this Skill's deliberately
   flat metadata format. This is not a general YAML validator or live Agent test.
@@ -57,8 +57,15 @@ enabling query-only access resolved it in one targeted fix. No review loop follo
 The workflow runs the same offline suite and package checks on standard public
 GitHub-hosted Ubuntu 24.04 runners, with Python 3.11, 3.12 and 3.13. It skips private
 repositories, grants only repository-read permissions, and uses no model API,
-secrets, cache or uploaded artifacts. The first run is pending publication;
-successful remote evidence will be linked here after readback.
+secrets, cache or uploaded artifacts. [Run 44049174989](https://github.com/z-hstudio/project-os-workflow/actions/runs/44049174989)
+completed successfully: each Python matrix job passed **31 tests** and package
+validation on code commit `39f8623934090e7e7a098cf0ed2b700fb5c8fdc3`.
+The subsequent publication update changes documentation/checksums only.
+
+Public repository: [z-hstudio/project-os-workflow](https://github.com/z-hstudio/project-os-workflow).
+Remote file paths and Git blob hashes matched the local allowlisted export.
+The independent public Git history starts with this candidate, not the private
+desktop repository. Source publication is not live-agent acceptance.
 
 Use [CANARY.md](CANARY.md) for the outstanding live acceptance and matched
 measurement procedure. Preserve failures and unknown measurements rather than

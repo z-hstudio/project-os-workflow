@@ -2,11 +2,13 @@
 
 [中文](README.md) · **0.1.0-rc.1 / release candidate** · [MIT](LICENSE)
 
+[![Offline checks](https://github.com/z-hstudio/project-os-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/z-hstudio/project-os-workflow/actions/workflows/ci.yml)
+
 Give the next agent session a compact account of where the project stands, what supports that account, and what comes next. Project OS Workflow stores project state and progress receipts in a project-local SQLite database for Codex and Claude Code.
 
 It is intended for small development projects that span sessions. The helper runs offline with Python 3.11+ and its standard library. It makes no model API calls, installs no background service, and changes no global agent configuration. Agent sessions remain subject to the chosen product's permissions and usage rules.
 
-**Current boundary: local tests have run on macOS / Python 3.12.13 / 3.13.14. Linux is untested; Windows is currently unsupported. Fresh-session continuation tests with real Codex and Claude Code agents have NOT RUN. The synthetic demo does not establish agent compliance, and no token-saving percentage has been measured.** See [compatibility](docs/COMPATIBILITY.md), [verification](docs/VERIFICATION.md), and [release status](docs/RELEASE.md).
+**Current boundary: offline checks passed on macOS and Ubuntu 24.04; see verification for exact Python versions. Windows is currently unsupported. Fresh-session continuation tests with real Codex and Claude Code agents have NOT RUN. The synthetic demo does not establish agent compliance, and no token-saving percentage has been measured.** See [compatibility](docs/COMPATIBILITY.md), [verification](docs/VERIFICATION.md), and [release status](docs/RELEASE.md).
 
 ## Start in three steps
 
@@ -113,7 +115,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-Python 3.11 is the code's minimum requirement; the executed test environment is currently Python 3.12.13 / 3.13.14. See [verification](docs/VERIFICATION.md) for actual results and the [live canary procedure](docs/CANARY.md) for steps still awaiting session authorization.
+Python 3.11 is the minimum requirement. Tested: Python 3.12/3.13 on macOS and Python 3.11/3.12/3.13 on Ubuntu 24.04. See [verification](docs/VERIFICATION.md) for actual results and the [live canary procedure](docs/CANARY.md) for steps still awaiting session authorization.
 
 The package checker uses no PyYAML or third-party packages. It validates this
 Skill's flat metadata format, local links, Python syntax and public allowlist;

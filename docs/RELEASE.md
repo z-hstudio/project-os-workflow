@@ -2,20 +2,20 @@
 
 Candidate: **0.1.0-rc.1** · Prepared: **2026-11-17**
 
-This is a locally prepared standalone package. A local export does not mean a repository, release, social post, or package has been published.
+Public source: [z-hstudio/project-os-workflow](https://github.com/z-hstudio/project-os-workflow). Tagged downloads are listed on [GitHub Releases](https://github.com/z-hstudio/project-os-workflow/releases). Source publication does not establish live-agent acceptance, measured token savings, or a social-media announcement.
 
 ## Acceptance status
 
 | Check | Status |
 | --- | --- |
-| Local helper, installation, and export tests | See [VERIFICATION.md](VERIFICATION.md) for actual results on macOS / Python 3.12.13 / 3.13.14. Python 3.11 is the minimum code requirement, not an executed test environment. |
+| Local helper, installation, and export tests | See [VERIFICATION.md](VERIFICATION.md) for actual results on macOS / Python 3.12.13 / 3.13.14. Python 3.11 is also tested in the Linux CI matrix. |
 | Synthetic demo | Fictional offline workflow only; not live agent acceptance. |
 | Codex fresh-session canary | **NOT RUN — exact model/quota authorization pending.** |
 | Claude Code fresh-session canary | **NOT RUN — exact model/quota authorization pending.** |
-| Linux | **NOT TESTED.** |
+| Linux | Ubuntu 24.04, Python 3.11/3.12/3.13: 31 offline tests and package checks passed in [CI](https://github.com/z-hstudio/project-os-workflow/actions/runs/44049174989). |
 | Windows | **UNSUPPORTED**: the installer uses `fcntl`. |
 | Token savings | **NOT MEASURED.** |
-| Public publication | A separate explicit action; not performed by export. |
+| Public publication | Public source repository verified. Tagged asset publication is tracked on GitHub Releases; no social-media post was sent. |
 
 Do not replace pending live checks with mocked transcripts or the synthetic GIF. Keep the candidate label until the intended release acceptance has evidence.
 

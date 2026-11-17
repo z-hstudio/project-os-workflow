@@ -21,7 +21,7 @@ The two adapters use identical skill content. On a project with both installed, 
 | Platform | Coverage |
 | --- | --- |
 | macOS | Local tests have run with Python 3.12.13 / 3.13.14. See [VERIFICATION.md](VERIFICATION.md) for the exact candidate's results; these do not validate live agent behavior. |
-| Linux | **NOT TESTED**. The standard-library design is not a verified support claim. |
+| Linux | **Offline checks passed** on Ubuntu 24.04, Python 3.11/3.12/3.13; [CI evidence](https://github.com/z-hstudio/project-os-workflow/actions/runs/44049174989). Live Agent behavior remains untested. |
 | Windows | **UNSUPPORTED** in this candidate: the installer uses the Unix-only `fcntl` module. |
 
 No minimum Codex or Claude Code application version is asserted without a successful recorded canary. Product discovery rules can change; consult [Codex](https://developers.openai.com/codex/skills) and [Claude Code](https://code.claude.com/docs/en/skills) documentation when diagnosing discovery failures.

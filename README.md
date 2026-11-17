@@ -2,11 +2,13 @@
 
 [English](README.en.md) · **0.1.0-rc.1 / 候选版本** · [MIT](LICENSE)
 
+[![Offline checks](https://github.com/z-hstudio/project-os-workflow/actions/workflows/ci.yml/badge.svg)](https://github.com/z-hstudio/project-os-workflow/actions/workflows/ci.yml)
+
 让下一次 Agent 会话知道项目做到哪里、依据是什么、接下来做什么。Project OS Workflow 把简短的项目状态和进展回执保存在项目自己的 SQLite 数据库中，供 Codex 与 Claude Code 接续工作。
 
 它适合跨会话继续的小型开发项目。Python 3.11+ 标准库即可运行；辅助脚本离线工作，不调用模型 API，不安装后台服务，也不修改全局 Agent 配置。Agent 会话本身仍受所用产品的权限和用量规则约束。
 
-**当前边界：本地测试运行于 macOS / Python 3.12.13 / 3.13.14；Linux 未测试，Windows 暂不支持。真实 Codex / Claude Code 新会话接续验收尚未运行。合成演示不能证明 Agent 会自动遵循流程，也没有实测 token 节省比例。** 详见[兼容性](docs/COMPATIBILITY.md)、[验证记录](docs/VERIFICATION.md)和[发布状态](docs/RELEASE.md)。
+**当前边界：离线检查已在 macOS 和 Ubuntu 24.04 通过，具体 Python 版本见验证记录；Windows 暂不支持。真实 Codex / Claude Code 新会话接续验收尚未运行。合成演示不能证明 Agent 会自动遵循流程，也没有实测 token 节省比例。** 详见[兼容性](docs/COMPATIBILITY.md)、[验证记录](docs/VERIFICATION.md)和[发布状态](docs/RELEASE.md)。
 
 ## 三步开始
 
@@ -112,7 +114,7 @@ python3 -m unittest discover -s tests -v
 python3 scripts/check_package.py
 ```
 
-Python 3.11 是代码的最低要求，目前执行过的测试环境为 Python 3.12.13 / 3.13.14；具体结果以[验证记录](docs/VERIFICATION.md)为准。[真实会话验收说明](docs/CANARY.md)列出仍待授权运行的步骤。
+Python 3.11 是最低要求；已测试 macOS 的 Python 3.12/3.13，以及 Ubuntu 24.04 的 Python 3.11/3.12/3.13。具体结果以[验证记录](docs/VERIFICATION.md)为准。[真实会话验收说明](docs/CANARY.md)列出仍待授权运行的步骤。
 
 包检查无需 PyYAML 或其他第三方库；它核对当前 Skill 的固定格式、文档链接、
 Python 语法和公开文件白名单，不冒充真实 Agent 加载测试。
